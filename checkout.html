@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+</head>
+    <body>
+        <h2>Checkout</h2>
+        <Form method="POST" action="https://request-inspector.glitch.me/">
+            <div>
+                <label for="firstname">First Name:</label>
+                <input id="firstname" name="firstname" type="text" placeholder="First Name" autofocus="autofocus" required>
+            </div>
+            <br>
+            <div>
+                <label for="lastname">Last Name:</label>
+                <input id="lastname" name="lastname" type="text" placeholder="Last Name" required>
+            </div>
+            <br>
+            <div>
+                <label for="cc">Card Number:</label>
+                <input id="cc" name="cc" type="text" placeholder="Card Number" required>
+            </div>
+            <br>
+            <div>
+                <label for="ed">Expiration date:</label>
+                <input id="ed" name="ed" type="text" placeholder="MM/YYYY" required>
+            </div>
+            <br>
+            <div>
+                <label for="sc">Security Code:</label>
+                <input id="sc" name="sc" type="text" placeholder="Security Code" required>
+            </div>
+            <br>
+            <h2>Billing Address</h2>
+            <div>
+                <label for="sa">Street Address:</label>
+                <input id="sa" name="sa" type="text" placeholder="Street Address" required>
+            </div>
+            <br>
+            <div>
+                <label for="city">City:</label>
+                <input id="city" name="city" type="text" placeholder="City" required>
+                <label for="state">State:</label>
+                <input id="state" name="state" type="text" placeholder="State" required>
+            </div>
+            <br>
+            <div>
+                <label for="zip">Zip Code:</label>
+                <input id="zip" name="zip" type="text" placeholder="Zip" required>
+            </div>
+            <br>
+            <div>
+                <input type="checkbox" id="" name="" value="yes" checked>
+                <label for="">Keep this credit card on file for future transactions</label>
+            </div>
+                <br>
+                <button type="submit">Buy Now!</button>
+        </form>
+    </body>
+</html>
