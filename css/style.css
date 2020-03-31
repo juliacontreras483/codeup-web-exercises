@@ -1,0 +1,33 @@
+h1, h2 {
+    color: ghostwhite;
+    text-decoration: underline;
+}
+ul {
+    list-style: square;
+    color: dodgerblue;
+}
+ol {
+    color: lightsteelblue;
+}
+p {
+    color: peru;
+}
+body{
+    font-family: 'Quicksand',cursive;
+    background-image: url("../img/pretty.jpg");
+    background-repeat: repeat;
+    background-size: contain, cover;
+    color: ghostwhite;
+}
+a:link {
+    color:ghostwhite;
+}
+a:visited{
+    color: yellowgreen;
+}
+a:hover{
+    color: deeppink;
+}
+a:active{
+    color: goldenrod;
+}
