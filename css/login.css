@@ -58,7 +58,7 @@ fieldset {
 
     padding: 8px;
     font-weight: bold;
-    border: 1px;
+    border: 1px solid lightgrey;
     color: white;
     background-color: #0fb784;
 
@@ -74,7 +74,7 @@ fieldset {
     padding-bottom: 4px;
     margin-top: .5em;
     margin-bottom: .5em;
-    width: calc(100% - 8px);
+    width: calc(100% - 4px);
 
 
 
