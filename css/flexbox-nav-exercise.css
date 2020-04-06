@@ -10,7 +10,6 @@ body {
 
 nav {
     background: rgb(193, 193, 193);
-
 }
 
 
@@ -20,6 +19,7 @@ ul {
 
      if i link font i dont have to write the font family?*/
     list-style: none;
+    height:3em;
     margin: 0;
     padding: 0;
     display: flex;
@@ -44,6 +44,7 @@ nav a {
     color: black;
     padding: .5em;
     margin-left: auto;
+    font-size: .65em;
 }
 
 /* targeting the list in the nav  ask about the a does it need to be written nav a */
@@ -70,7 +71,8 @@ a:active{
 
 
 nav ul li:nth-child(5) {
-    margin: auto;
+    margin-left: auto;
+    margin-right:auto;
     padding-top: .2em;
     padding-bottom: .2em;
     font-size: 3em;
