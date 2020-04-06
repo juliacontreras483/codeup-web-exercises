@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+
+}
+
+
+body {
+    margin: 0;
+}
+
+nav {
+    background: rgb(193, 193, 193);
+
+}
+
+
+ul {
+
+    /*list-style: none; list-style-type: <---------------ask about this what is the difference
+
+     if i link font i dont have to write the font family?*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /*box-sizing: border-box;*/
+    font-weight: bold;
+    align-items: center;
+    font-family: 'Montserrat', 'Work Sans', sans-serif;
+
+
+
+    /*
+    align-self: stretch;
+
+    justify-items: stretch; */
+
+
+}
+/* this targets all of the a in the html like a chapter 3 paragraph 15*/
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    padding: .5em;
+    margin-left: auto;
+}
+
+/* targeting the list in the nav  ask about the a does it need to be written nav a */
+
+li {
+    margin: 0;
+
+
+}
+
+a:link {
+    color:black;
+}
+a:visited{
+    color:black;
+}
+a:hover{
+    color: blue;
+    background-color: indigo;
+}
+a:active{
+    color: black;
+}
+
+
+nav ul li:nth-child(5) {
+    margin: auto;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    font-size: 3em;
+    font-weight: lighter;
+
+}
