@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+.grid-container{
+    display: inline-grid;
+    margin-top: 2em;
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 3px solid black;
+}
+.grid-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.one {
+    background-color: #2f447a;
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+
+}
+
+.two{
+    background-color:#dc1b21;
+    grid-row: 1 / 4;
+    grid-column: 3 / 9 ;
+
+}
+
+.three{
+    background-color: #fccb08;
+    grid-row: 3 / 6;
+    grid-column: 1 / 3 ;
+
+}
+
+.four{
+    background-color: #ffffff;
+    grid-row: 6 / 8;
+    grid-column: 1/3;
+
+}
+
+.five{
+    background-color: #ffffff;
+    grid-row: 4 / 8;
+    grid-column: 3 / 5;
+
+}
+
+.six{
+    background-color: #ffffff;
+    grid-row: 4 / 6;
+    grid-column: 5 / 9;
+
+}
+
+.seven {
+    background-color: #dc1b21;
+    grid-row: 8/ 9;
+    grid-column: 1/3;
+
+}
+
+.eight {
+    background-color: #2f447a;
+    grid-row: 8/9 ;
+    grid-column: 3/9;
+
+}
+
+.nine {
+    background-color: #fccb08;
+    grid-row: 6/ 8;
+    grid-column: 5/9;
+}
