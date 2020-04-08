@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+.grid-container{
+    display:grid;
+    width: 100vw;
+    height:100vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows:  repeat(10, 1fr);
+
+
+
+}
+.grid-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid white;
+
+
+}
+
+.one {
+    background-color: #ffd700;
+    grid-area: 1/1/2/10;
+
+}
+
+.two{
+    background-color: #ffd700;
+    grid-area: 2/1/11/2;
+
+}
+
+.three{
+    background-color: #ffd700;
+    grid-area: 2/2/9/5;
+
+
+}
+
+.four{
+    background-color: #ffd700;
+    grid-area: 2/5/9/6;
+
+
+}
+
+.five{
+    background-color: #ffd700;
+    grid-area: 9/2/11/6;
+
+}
