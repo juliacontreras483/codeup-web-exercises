@@ -1,21 +1,15 @@
-
-
-
 .jumbotron {
     background-image: url("../img/pizza.png");
-
 }
-
-
 
 .jumbotron h1 {
     background-color: white; opacity: .6;
     text-align: center;
+    font-weight: 400;
+
 }
 
 
 
 
-.sizecrust {
-    width: 100vw;
-}
+
