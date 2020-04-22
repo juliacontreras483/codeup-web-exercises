@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Anton&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F0F0F0;
+
+}
+
+
+
+:root {
+    --main-bg-color: white;
+    --main-lightgrey-color: lightgrey;
+    --main-red-color: #E6563B;
+    --main-gold-color: #EB9D3A;
+    --main-green-color: #76B06C;
+    --main-aqua-color: #00ABA9;
+}
+h2 {
+    font-family: "Anton", sans-serif;
+}
+
+h5 {
+    font-family: "Abel", sans-serif;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-family: "Abel", sans-serif;
+    color: black;
+}
+p {
+    font-size: small;
+}
+
+.logo {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    justify-content: center;
+}
+
+.tlogo {
+    width: 40px;
+    height: 40px
+
+}
+
+.abel {
+    font-family: "Abel", sans-serif;
+
+}
+
+.anton {
+    font-family: "Anton", sans-serif;
+
+}
+
+.red {
+    background-color: var(--main-red-color);
+    border: .5em solid white;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gold {
+    background-color: var(--main-gold-color);
+    border: .5em solid white;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.green {
+    background-color: var(--main-green-color);
+    border: .5em solid white;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aqua {
+    background-color: var(--main-aqua-color);
+    border: .5em solid white;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    font-family: 'Anton', sans-serif;
+    font-size: 12px;
+}
+.dot-r {
+    background-color: var(--main-red-color);
+
+}
+.dot-g {
+    background-color: var(--main-gold-color);
+}
+
+.dot-gr {
+    background-color: var(--main-green-color);
+}
+
+.dot-a {
+    background-color: var(--main-aqua-color);
+}
+
+.text-circles {
+    font-weight: 100;
+    font-size: 15px;
+}
+#banner {
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    margin-top: 25px;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.img-thumbnail {
+    background-color: lightgray;
+    /*width: 105px;*/
+    /*height: 105px*/
+}
+
+.phone, .ipad, .head{
+    width: 100px;
+    height: 100px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** {*/
+/*    box-sizing: border-box;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+
+/*body {*/
+/*    background-color: #F0F0F0;*/
+
+
+/*}*/
+
+/*!*.container {*!*/
+/*!*    !*max-width: 991px;*!*!*/
+/*!*    max-height: 100%;*!*/
+/*!*}*!*/
+
+/*hr {*/
+/*    margin-top: 1rem;*/
+/*    margin-bottom: 1rem;*/
+/*    border: 0;*/
+/*    border-top: 1px solid rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+
+
+
+/*img {*/
+/*    max-width:100%;*/
+/*    max-height:100%;*/
+/*}*/
+
+/*!*.h-divider{*!*/
+/*!*    margin-top:25px;*!*/
+/*!*    margin-bottom:25px;*!*/
+/*!*    height:1px;*!*/
+/*!*    width:100%;*!*/
+/*!*    border-top:1px blue;*!*/
+
+
+/*.nav-link {*/
+/*    font-family: "Abel", sans-serif;*/
+/*    color: black;*/
+/*}*/
+/*p {*/
+/*    font-family: "Abel", sans-serif;*/
+/*}*/
+
+/*.logo {*/
+/*    width: 105px;*/
+/*    height: 105px;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+
+/*.abel {*/
+/*    font-family: "Abel", sans-serif;*/
+/*}*/
+
+/*.anton {*/
+/*    font-family: "Anton", sans-serif;*/
+/*}*/
+
+/*.design {*/
+/*    background-color: #E6563B*/
+/*}*/
+/*.develop {*/
+/*    background-color: #DEA03D*/
+/*}*/
+/*.support {*/
+/*    background-color: #76B06C*/
+/*}*/
+/*.host {*/
+/*    background-color: #00ABA9*/
+/*}*/
+
+/*.ball {*/
+/*    margin: 1em auto 1.5em auto;*/
+/*    width: 600px;*/
+/*}*/
+
+/*!*.text-circles{*!*/
+/*!*    border: solid white 1em;*!*/
+/*!*    color: white;*!*/
+/*!*    border-radius: 50%;*!*/
+/*!*    width: 25vw;*!*/
+/*!*    padding: 50px 50px;*!*/
+/*!*    display: flex;*!*/
+/*!*    align-items: center;*!*/
+/*!*    justify-content: center;*!*/
+/*!*}*!*/
+
+/*#banner {*/
+/*    background-color: white;*/
+/*    width: 100%;*/
+/*    height: 60px;*/
+/*    margin-top: 25px;*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*}*/
+
+
+/*.text-circles {*/
+/*    height: 115px;*/
+/*    width: 115px;*/
+/*    border: 6px solid white;*/
+/*    text-align: center;*/
+/*    vertical-align: middle;*/
+/*    font-size: 20px;*/
+/*    border-radius: 50%;*/
+/*}*/
