@@ -1,3 +1,5 @@
+"use strict";
+
 
 // Break and Continue
 // Create a file named break_and_continue.js in the js directory.
@@ -36,9 +38,34 @@
 
 
 
+// var random = Math.floor((Math.random() * 50) + 1);
 
 
 
 
 
 
+
+
+// alert("Welcome! Lets play a game");
+//
+// var userOddNum = Number(prompt("Pick an odd number between 1 and 50"));
+//
+// console.log("Random odd number to skip is " + userOddNum);
+//
+// for (var i = 1; i < 50; i++) {
+//     if (i % 2 === 0) {
+//         // Skip the even numbers.
+//         continue;
+//     }
+//
+//     if (userOddNum=== i){
+//         console.log("Yikes! Skipping number:" + i);
+//     } else{
+//         console.log("Here is an odd number: " + i);
+//     }
+//
+//     if ( i >= 49){
+//         break;
+//     }
+// }

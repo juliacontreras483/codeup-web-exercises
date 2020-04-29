@@ -143,7 +143,9 @@
 //     console.log(i);
 // }
 
+//pre-work example
 
+//for ( var i = 100; i > 0; i- =5 i= i-5 you could writ the i = i - 5
 
 
 
