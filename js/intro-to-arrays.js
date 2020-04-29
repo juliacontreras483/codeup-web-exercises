@@ -34,6 +34,7 @@ console.log("Welcome to intro to arrays");
 // TODO TOGETHER: Set the following array equal to variable called `shapes`. Console.log the variable
 //  ['square', 'rectangle', 'circle', 'triangle'];
 
+var shapes = {'square', ''}
 
 // TODO: Set the following array equal to a variable called `instructors` - then console.log the variable
 //  ["sophie", "vivian", "david", "justin", "daniel", "fernando", "trant"]
