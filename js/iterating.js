@@ -51,7 +51,6 @@
 
 
 
-
     /**
      * TODO:
      * Write some code that uses a for loop to log every item in the names
@@ -62,10 +61,6 @@
     for(let i = 0; i < names.length; i++){
         console.log(names[i]);
     }
-
-
-
-
 
 
 
@@ -108,7 +103,7 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    let bubbles = ["1","2","3","4","5"];
+    let bubbles = [1, 2, 3, 4, 5];
 
 
     function first(array){
