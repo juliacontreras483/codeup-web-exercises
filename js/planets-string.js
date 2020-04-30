@@ -39,7 +39,10 @@
 
     var newPlanets = planetsArray.join('\n');
 
-    //submarineArray.join('<br>');
+    console.log(newPlanets);
+
+    var newPlanets = planetsArray.join('<br>');
+
     console.log(newPlanets);
 
 
