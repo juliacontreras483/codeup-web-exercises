@@ -12,6 +12,19 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+    var person = {
+
+        firstName: "Julia",
+        lastName: "Contreras"
+    };
+
+    console.log(person.firstName);
+    console.log(person.lastName);
+
+    
+
+    
+    
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -22,6 +35,22 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+
+
+    // let sayHello = ("Hello from " + person.firstName + " " +  person.lastName + "!")
+    //
+    //
+    // console.log(sayHello);
+
+
+    person.sayHello = function(){
+        return "Hello from " + this.firstName + " " + this.lastName + "!";
+    };
+
+    console.log(person.sayHello());
+    
+
+    
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -42,6 +71,35 @@
     //     {name: 'George', amount: 320}
     // ];
 
+    var shoppers = [
+            {
+                name: 'Cameron',
+                amount: 180
+            },
+            {
+                name: 'Ryan',
+                amount: 250
+            },
+            {
+                name: 'George',
+                amount: 320
+            }
+        ];
+
+    shoppers.forEach(function(shopper){
+        var initialAmount = shopper.amount;
+        var discount = shopper.amount * .12;
+        var finalAmount = initialAmount - discount;
+
+        if(initialAmount > 200){
+            console.log(shopper.name + " spent " + initialAmount + ". They" +
+                " get a discount of " + discount + ". The total paid was: " + finalAmount);
+        }else {
+            console.log(shopper.name + " paid " + initialAmount);
+        }
+    });
+
+
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -54,7 +112,46 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [
+        {
+            title: "Hitchhiker's Guide to the Galaxy",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: {
+                firstName: "JK",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: "Garfield Loses His Feet",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Traction",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Frankenstein",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        }
+    ];
 
+
+    
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -80,6 +177,35 @@
      *      ...
      */
 
+    books.forEach(showBookInfo);
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -90,5 +216,26 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(title,first,last){
+        var book = {};
+        book.title = title;
+        book.author = {
+            firstName: first,
+            lastName: last
+        };
+        return book;
+    }
 
+    books.push(createBook("Cat's Cradle","Kurt","V"));
+    books.push(createBook("Cat's Cradle","Kurt","V"));
+
+    function showBookInfo (book,i){
+        var output = "";
+        output += "Book # " + (i + 1) + "\n";
+        output += "Title: " + book.title + "\n";
+        output += "Author: " + book.author.firstName + " " + book.author.lastName + "\n";
+        output += "---";
+        console.log(output);
+
+    }
 })();
