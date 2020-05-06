@@ -6,17 +6,96 @@
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            /*width: 400px;*/
+            height: 600px;
+
+        }
+
+    </style>
 
 </head>
 <body>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+
+<div id='map'></div>
+
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-utilities.js"></script>
+
+
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWFjb250cmVyYXM0ODMiLCJhIjoiY2s5dmc2aWlyMDA0YTNwcGkwNm82MDZ2YyJ9.LUS4GadhJDw3Je6tucTuIg';
+  (function() {
+    mapboxgl.accessToken = mapboxKey;
+
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9'
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.496574, 29.4241]
     });
+
+
+    //customizing the map
+
+      // map.setCenter()
+      //map.setZoom()
+      //marker.remove()
+
+      // markers
+
+      var marker = new mapboxgl.Marker();
+
+      marker.setLngLat( {lng: -98.496574, lat: 29.4241});
+      marker.addTo(map);
+
+      //popups
+
+      var popup = new mapboxgl.Popup();
+
+      popup.setHTML('<h3>San Antonio!</h3>');
+
+      marker.setPopup(popup);
+
+      //events
+
+      map.on('dragend', function () {
+          console.log(hello);
+      });
+
+
+
+      // extra controls to add
+      var new = mapboxgl.NavigationControl();
+      map.addControl(nav, 'top-left');
+
+
+      ///geocode
+
+      geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxKey) .then(function(result) {
+          consol.log(result);
+          map.setCenter(result);
+          map.setZoom(20);
+      });
+
+
+
+      //reverse geocode
+
+      reverseGeocode({lng:-98.4861, lat: 29.4260}, mapboxKey) .then(function(result) {
+          console.log(results);
+     });
+
+
+
+
+
+
+
+
+})();
 </script>
 
 
