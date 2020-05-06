@@ -9,7 +9,20 @@
 // Example output: true
 
 
+//
+// function number () {
+//
+// }
 
-function number () {
 
+
+
+// Write a javascript function that takes in a number and returns the number raised to the power of four. If any argument is passed into the function that is not a number, return false.
+
+
+function number (num) {
+    return Math.pow(num, 4)
 }
+
+
+console.log(4);
