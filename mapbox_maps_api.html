@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAP BOX 2</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+
+
+    <style>
+        #map {
+            height: 600px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<div id='map'></div>
+
+
+<h1>Coordinates</h1>
+<pre id="coordinates" class="coordinates"></pre>
+
+
+<script src="js/keys.js"></script>
+
+
+<script>
+    (function() {
+        "use strict";
+
+        mapboxgl.accessToken = mapboxKey;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 15,
+        });
+
+
+        var marker = new mapboxgl.Marker({
+            draggable: true})
+
+
+            .setLngLat( {lng: -77.0502, lat: 38.8893})
+            .addTo(map)
+
+
+        var popup = new mapboxgl.Popup();
+
+        popup.setHTML('<h3>Lincoln Memorial</h3>');
+
+        marker.setPopup(popup);
+
+
+
+
+
+
+
+        //events
+
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
+            coordinates.style.display = 'block';
+            coordinates.innerHTML =
+                'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+        }
+
+        marker.on('dragend', onDragEnd);
+
+
+
+
+
+    })();
+</script>
+
+
+</body>
+</html>
+<!--Exercises-->
+<!--Please follow the instructions below. Remember to commit your changes after each step. At the end of the exercise, push your changes to GitHub.-->
+
+<!--Generate a Mapbox API Key using the steps from above-->
+<!--Create a new file named mapbox_maps_api.html and add a map using the next steps.-->
+<!--Generate a map that shows the city with your favorite restaurant using geocoding.-->
+<!--Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value of zoom level where the map properties are initially set and refresh the page to see the changes. Can the zoom be changed programmatically after the initial map is drawn?-->
+<!--Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.-->
+<!--Create a popup with the name of the restaurant.-->
+<!--Make sure the info window does not display until the marker has been clicked on.-->
+<!--Refactor your code to display at least three of your favorite restaurants with information about each. Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather than a for loop.-->
+<!--Bonuses (roughly in ascending order of challenge)-->
+<!--Info windows can contain basic HTML, not just plain text. Add some additional information about your restaurant to the popup such as why it is your favorite, dishes you like, images, etc.-->
+<!--Add a select input that allows the user to change the zoom level to 5, 15, or 20.-->
+<!--Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.-->
+<!--Add a button that will hide all markers.-->
+<!--Using this marker animation example as a starting point, animate a marker to bounce up and down. Alter the animation to stop after two seconds. Make the amount of bounce animation scale according to zoom level.-->
+<!--Replace the generic marker icon with an image that is more appropriate for each restaurant. A tutorial for this can be found here.-->
+
