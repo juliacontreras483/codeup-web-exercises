@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10 FAQ</title>
+</head>
+
+<style>
+
+    dd {
+        visibility: hidden;
+    }
+
+
+
+</style>
+<body>
+
+<p>10 Interesting FAQ's about National Parks:</p>
+
+<dl>
+    <dt>National Park FAQ 1: </dt>
+    <dd class="invisible">The largest living things in the world are in National Parks: Sequoia trees and Alaskan brown bears (the world’s largest living carnivores).</dd>
+
+    <dt>National Park FAQ 2: </dt>
+    <dd class="invisible">Seneca Falls National Park in New York is the location of the First Women’s Right Conventions, where expanding rights of women were discussed in the mid-19th century.</dd>
+
+    <dt>National Park FAQ 3: </dt>
+    <dd class="invisible">There are 27,000 historic and prehistoric structures preserved within the National Parks System.</dd>
+
+    <dt>National Park FAQ 4: </dt>
+    <dd class="invisible">Yosemite National Park supports more than 400 species of vertebrates including fish, amphibians, reptiles, birds, and mammals.</dd>
+
+    <dt>National Park FAQ 5: </dt>
+    <dd class="invisible">There is 1 active volcano, thousands of petrified trees, and almost 300 waterfalls in Yellowstone National Park.</dd>
+
+    <dt>National Park FAQ 6: </dt>
+    <dd class="invisible">In the National Park System, there are 407 sites covering more than 84 million acres of land.</dd>
+
+    <dt>National Park FAQ 7: </dt>
+    <dd class="invisible">In 2014, more than 290 million people visited the National Parks.</dd>
+
+    <dt>National Park FAQ 8: </dt>
+    <dd class="invisible">The Appalachian Trail is a 2,185 mile long public footpath that traverses the scenic, wooded, pastoral, wild, and culturally resonant lands of the Appalachian Mountains.</dd>
+
+    <dt>National Park FAQ 9: </dt>
+    <dd class="invisible">The nation’s deepest cave is 1,593 ft deep in New Mexico at Carlsbad Caverns National Park.</dd>
+
+    <dt>National Park FAQ 10: </dt>
+    <dd class="invisible">Originally established by Congress as Hot Springs Reservation in 1832 and later becoming a national park in 1921, Hot Springs National Park represents the oldest protected area in the National Park System</dd>
+
+
+</dl>
+
+
+
+<h3 id="park1">park 1</h3>
+<ul>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+    <li>four</li>
+</ul>
+
+<h3>park 2</h3>
+<ul>
+    <li>five</li>
+    <li>six</li>
+    <li>seven</li>
+    <li>eight</li>
+</ul>
+
+<h3>park 3</h3>
+<ul>
+    <li>nine</li>
+    <li>ten</li>
+    <li>eleven</li>
+    <li>twelve</li>
+</ul>
+
+<button id="styler-2">Click me to highlight last list item</button>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+    $(document).ready(function() {
+        // $('dd').addClass('invisible');
+
+        $('#styler-2').click(function(){
+            $('ul').toggleClass('invisible');
+        });
+
+        $('li').click(function(){
+            $(this).toggleClass('highlighter');
+        });
+
+        $('li').click(function(){
+            // method chaining
+            $(this).parent().css('background-color', 'yellow');
+        });
+    });
+    $('ul').click(function(){
+        console.log($(this).children().last().html());
+    });
+
+    $('#park1').next().css('background-color', 'salmon');
+
+</script>
+
+
+<!--<script src="js/jquery-2.2.4.js"></script>-->
+
+<!--<script>-->
+
+<!--    $('dt').click(function() {-->
+<!--        $(this).css({-->
+<!--            'background-color': 'blue',-->
+<!--            'color': 'white',-->
+<!--        });-->
+<!--    });-->
+
+<!--    // $('dd').click(function() {-->
+<!--    //     $(this).css({-->
+<!--    //         'visibility' : 'visible'-->
+<!--    //     });-->
+<!--    // });-->
+
+
+<!--        $("dt").click(function() {-->
+<!--            $("dd").toggle(-->
+<!--                function () {-->
+<!--                    $(this).css({visibility: "hidden"});-->
+<!--                },-->
+<!--                function () {-->
+<!--                    $(this).css({visibility: "visible"});-->
+<!--                });-->
+<!--        });-->
+
+<!--</script>-->
+</body>
+</html>
+
+
+<!--Exercises-->
+<!--Create a new file named jquery_faq.html. Commit all changes to GitHub.-->
+
+<!--In a HTML structure, create a definition list containing 10 FAQs about national parks.-->
+
+<!--Add a class to all dd elements named invisible.-->
+
+<!--Create some CSS rules that sets elements with the invisible class to visibility: hidden;.-->
+
+<!--Update the page with jQuery to add a link that toggles the class invisible on and off for all dd elements.-->
+
+<!--Bonus-->
+
+<!--When any of the dt elements is clicked, the element that was clicked should be highlighted.-->
+
