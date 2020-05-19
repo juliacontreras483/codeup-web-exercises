@@ -1,0 +1,35 @@
+=========== VERSION CONTROL PRACTICE FOR ASSESSMENTS
+
+-- Summary of Steps
+
+Clone repo
+Create your named branch and checkout to it
+Add an h1 with your name in it
+Add and commit
+Push your branch
+Go to GitHub repo and check that branch is there
+
+
+-- Detailed steps
+
+Go to GitHub and copy repo ssh url found after pushing green clone button
+
+Use IntelliJ create a new project from version control to clone the project locally
+
+Open the project in IntelliJ
+
+Open the IntelliJ terminal and create a new branch called your name and checkout to it
+
+Add an h1 to the index.html file with your name inside it
+
+Add and commit your changes
+  
+  git add .
+  git commit -m 'add h1'
+
+Push your branch to GitHub
+
+  git push origin BRANCH-NAME-HERE
+
+Go to GitHub and check that your branch was pushed and that it has your work in it
+

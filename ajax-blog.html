@@ -5,17 +5,36 @@
     <title>Ajax Blog</title>
 
 
+<div id="post"></div>
 
 
-<!--    Ajax Blog-->
-<!--    Create a new html file called ajax-blog.html.-->
 <!--    At minimum, your Ajax blog will need an empty <div> with an id of posts.-->
 <!--    Add your own Bootstrap theme to this file as well. Feel free to use the same one as your store or choose a different one.-->
 <!--    Download blog.json to your data directory from before.-->
 <!--    Use Ajax to load the contents of blog.json and add the data from it to your #posts div.-->
+
 <!--    Add additional entries to blog.json and make sure your changes are reflected on the page.-->
 </head>
 <body>
+<script>
+(function() {
+        "use strict";
+        $.ajax('data/blog.json').done(function(info) {
+            console.log(info);
+            info.forEach(function(tool){
+                $("#insertProducts").append("<tr><td>" + tool.title + "</td>" + "<td>" + tool.quantity + "</td>" + "<td>" + tool.price + "</td>" + "<td>" + tool.categories.join(", ") + "</td></tr>");
+            });
+
+            $('#refresh').click(function() {
+                var INVVALUES = " ";
+                info.forEach(function (tool) {
+                    INVVALUES += "<tr><td>" + tool.title + "</td>" + "<td>" + tool.quantity + "</td>" + "<td>" + tool.price + "</td>" + "<td>" + tool.categories.join(", ") + "</td></tr>";
+                });
+                $('#insertProducts').html(INVVALUES)
+            });
+        });
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,95 @@
+================================= GIT BRANCHING
+
+Like controlling alternate universes
+
+Important commands...
+  git checkout BRANCH_NAME_HERE ---- used to move from one branch to another
+  git branch BRANCH_NAME_HERE ------ used to create a branch
+  git checkout -b BRANCH_NAME_HERE - used to create a new branch and checkout to it
+  git branch ----------------------- used to see what branch you are on
+  git branch -D BRANCH_NAME_HERE --- used to delete a branch
+  git merge BRANCH_NAME_HERE ------- used to take work from one branch and copy it over to another
+
+Real world application: various team members or teams work on different branches
+
+A new branch can be created for each team member or feature
+
+Commits almost never happen on the master branch
+
+
+
+================================= GIT BRANCHING FOLLOW ALONG EXERCISE
+
+(open terminal and run the following commands)
+
+(move to desktop)
+cd ~/desktop
+
+(create a new directory)
+mkdir branch-test
+
+(move into the directory)
+cd branch-test
+
+(make it a Git repo)
+git init
+
+(create a file)
+touch master.txt
+
+(add file to staging area)
+git add .
+
+(commit the file)
+git commit -m 'add file in master branch'
+
+(view branches; only master should be seen)
+git branch
+
+(create a new branch)
+git branch another-branch
+
+(view branches again; notice that two branchs now exist)
+git branch
+
+(move to another-branch from master)
+git checkout another-branch
+
+(view branches and verify no longer in master branch)
+git branch
+
+(create a new file)
+touch another.txt
+
+(check the status)
+git status
+
+(add to staging)
+git add .
+
+(commit in another-branch)
+git commit -m 'add file in another-branch'
+
+(view current file)
+ls
+
+(move back to master branch)
+git checkout master
+
+(view files; notice another.txt is no longer here)
+ls
+
+(look at commit history accross the two branches)
+git log
+
+(move work from another-branch to the master branch)
+git merge another-branch
+
+(view files; another.txt should now be here)
+ls
+
+(create a third branch; notice it is a copy of the current master branch)
+git checkout -b yet-another-branch
+
+(view files)
+ls
