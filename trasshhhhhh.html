@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Review</title>
+</head>
+<body>
+<div class="container">
+    <div id="main">
+        <input type="text" id="input">
+        <button id="add-to-list">Add to List</button>
+
+        <h4>Favorite Food:</h4>
+        <ul id="favorite-food">
+            <li>Ramen</li>
+            <li>Sushi</li>
+            <li>Curry</li>
+        </ul>
+
+        <h4 id="change-me">Change Me</h4>
+
+        <h4>My Cohort: <span id="my-cohort"></span></h4>
+        <input type="text" id="cohort-name">
+        <button id="change-cohort">Update</button>
+
+        <br>
+        <button id="highlight">Highlight</button>
+    </div>
+</div>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+    (function() {
+        "use strict";
+        //         - Allow the user to type in their favorite food into the input and append it
+//     to the list once the button is clicked.
+        let addToListButton = document.getElementById('add-to-list');
+        let entry = document.getElementById('input');
+        let ul = document.querySelector('ul');
+
+        function entryLength(){
+            return entry.value.length
+        }
+
+        function createListElement(){
+            let li = document.createElement('li');
+            li.appendChild(document.createTextNode(entry.value));
+            ul.appendChild(li);
+            entry.value = '';
+        }
+
+        function addAfterClick(){
+            if(entryLength() > 0) {
+                createListElement();
+            }
+        }
+
+        addToListButton.addEventListener('click', addAfterClick);
+
+        // // $("#add-to-list").click(function(){
+        // //     $("li").append("input");
+        // });                <- code i found somewhere
+
+
+        //     - When the heading 'Change Me' is double clicked, change its
+//     background-color to purple.
+
+
+        $( "#change-me" ).dblclick(function() {
+            $(this).css('background-color', 'purple');
+        });
+
+
+
+        //     - Allow the user to input their cohort name. Once Update button is clicked,
+//         the text should should update with the name of the cohort.
+        let addToListButton = document.getElementById('add-to-list');
+        let entry = document.getElementById('input');
+        let ul = document.querySelector('ul');
+
+        function entryLength(){
+            return entry.value.length
+        }
+
+        function createListElement(){
+            let li = document.createElement('li');
+            li.appendChild(document.createTextNode(entry.value));
+            ul.appendChild(li);
+            entry.value = '';
+        }
+
+        function addAfterClick(){
+            if(entryLength() > 0) {
+                createListElement();
+            }
+        }
+
+        addToListButton.addEventListener('click', addAfterClick);
+
+
+        //     - When 'Highlight' button is clicked, change the background color of the
+//     cohort name to yellow.
+
+
+        //     - Write some JavaScript that changes the background-color of the container to
+//     pink after 3 seconds. USED BOM
+//         $('.container').css("background-color", "white");
+        setTimeout(function(){
+            $('.container').css("background-color", "pink");
+        }, 3000);
+
+
+
+
+        //another way of writing the change for background
+        // let container = document.getElementsByClassName('container')[0];
+        // //set timeout
+        // let delay = 3000;
+        //
+        // setTimeout(function(){
+        //     container.style['background-color'] = 'pink';
+        // }, delay);
+
+
+
+    })();
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Example jQuery Page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 id="codeup">Hello Codeup</h1>-->
+
+<!--<script src="js/jquery-2.2.4.js"></script>-->
+<!--<script>-->
+<!--    "use strict";-->
+
+<!--    $(document).ready(function() {-->
+<!--        $('#codeup').hover(-->
+<!--            function() {-->
+<!--                $(this).css('background-color', '#FF0');-->
+<!--            },-->
+<!--            function() {-->
+<!--                $(this).css('background-color', '#FFF');-->
+<!--            }-->
+<!--        );-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
