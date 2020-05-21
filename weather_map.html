@@ -1,115 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet'/>
+
+
     <meta charset="UTF-8">
-    <title>W E A T H E R     M A P</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <! jquery -->
-
-    <style>
-        #map {
-            height: 600px;
-
-        }
-
-    </style>
-
+    <title>W E A T H E R     A P P</title>
 </head>
 
+<body>
 
-<!--NAV BAR-->
-<nav class="navbar navbar-light bg-dark">
-    <a class="navbar-brand text-white" href="#">Weather App</a>
+<nav class="navbar navbar-dark bg-dark text-light justify-content-around">
+    <h4 class="name-wa flex-grow-1">Weather App</h4>
+    <h4 class="city-name">Current City:<span id="my-city"></span></h4>
 </nav>
 
-<br>
-<!----- search city, state -------->
-<form class="form-inline">
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="staticEmail2" class="sr-only">Place</label>
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Place">
+
+
+
+<div class="container">
+    <div class="row flex-nowrap justify-content-around weather-row">
     </div>
-    <div class="form-group mx-sm-3 mb-2">
-        <label for="inputPassword2" class="sr-only">City, State</label>
-        <input type="password" class="form-control" id="inputPassword2" placeholder="City, State">
-    </div>
-    <button type="submit" class="btn btn-primary mb-2">Find</button>
-</form>
+</div>
 
+<div id='map' style='width: 100%; height: 60vh;'></div>
 
-
-
-<body>
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
-
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-<! keyss for mapbox and weather map -->
-
-<div id='map'></div>
-
-<script src = "js/keys.js"></script>
-
-
-
-<script>
-
-    "use strict";
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
 
 
 
 
 
-    mapboxgl.accessToken = mapboxKey;
-
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.496574, 29.4241]
-    });
 
 
 
 
-    var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
-    var weatherOptions = {
-        lat: 29.4241,
-        lon: -98.4936,
-        appid: OPEN_WEATHER_APPID,
-        exclude: 'minutely, current, hourly'
 
-    };
-    $.get(weatherUrl, weatherOptions).done(function(data){
-        console.log(data);
-        console.log(data.daily[0].temp.max);
 
-        var todayDate = new Date(data.daily[0].dt * 1000);
-        console.log(todayDate.toLocaleDateString());
-    });
+<script src="js/jquery-2.2.4.js"></script>
+<script src="js/keys.js"></script>
+<script src="js/weather_map.js"></script>
 
 
 
-
-</script>
-
-
-
-
-<!--eate a new HTML file called weather_map.html.-->
-<!--As you complete each step, commit your changes and push them to GitHub.-->
-<!--Using HTML, CSS, jQuery, AJAX, and the OpenWeatherMap API, start by showing the current conditions for city you live in on your page.-->
-<!--Update your layout and AJAX request(s) to display a five day forecast for the city you live in that looks like the screenshot below.-->
-<!--If you want to add the icons the URLs for OpenWeatherMap's icons are formatted like: http://openweathermap.org/img/w/[icon].png where [icon] comes from the API response.-->
-<!--Refer to your Mapbox API exercise. Recreate the map below your 5 day forecast. Read through the documentation for the Mapbox API and figure out how to allow the user to drop a pin on any place on the map. Once the user drops a pin, grab its coordinates and feed those into your OpenWeatherMap API. Update the five-day forecast with the information from those coordinates (you should also get rid of your input boxes at this point).-->
-<!--Add a Mapbox text input to search by location and have the forecast update when a new location is searched.-->
-<!--As a bonus make sure you can update the marker's position to the new search result.-->
-<!--See a couple of examples here:-->
+<!--BOOTSTRAP-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>W E A T H E R     M A P</title>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+
+<!--    <! jquery &ndash;&gt;-->
+
+<!--    <style>-->
+<!--        #map {-->
+<!--            height: 600px;-->
+
+<!--        }-->
+
+<!--    </style>-->
+
+<!--</head>-->
+
+
+<!--&lt;!&ndash;NAV BAR&ndash;&gt;-->
+<!--<nav class="navbar navbar-light bg-dark">-->
+<!--    <a class="navbar-brand text-white" href="#">Weather App</a>-->
+<!--</nav>-->
+
+<!--<br>-->
+<!--&lt;!&ndash;-&#45;&#45; search city, state &#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--<form class="form-inline">-->
+<!--    <div class="form-group mx-sm-3 mb-2">-->
+<!--        <label for="staticEmail2" class="sr-only">Place</label>-->
+<!--        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Place">-->
+<!--    </div>-->
+<!--    <div class="form-group mx-sm-3 mb-2">-->
+<!--        <label for="inputPassword2" class="sr-only">City, State</label>-->
+<!--        <input type="password" class="form-control" id="inputPassword2" placeholder="City, State">-->
+<!--    </div>-->
+<!--    <button type="submit" class="btn btn-primary mb-2">Find</button>-->
+<!--</form>-->
+
+
+
+
+<!--<body>-->
+<!--<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>-->
+<!--<link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />-->
+
+
+<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
+
+<!--<! keyss for mapbox and weather map &ndash;&gt;-->
+
+<!--<div id='map'></div>-->
+
+<!--<script src = "js/keys.js"></script>-->
+
+
+
+<!--<script>-->
+
+<!--    "use strict";-->
+
+
+
+
+
+<!--    mapboxgl.accessToken = mapboxKey;-->
+
+<!--    var map = new mapboxgl.Map({-->
+<!--        container: 'map',-->
+<!--        style: 'mapbox://styles/mapbox/streets-v9',-->
+<!--        zoom: 10,-->
+<!--        center: [-98.496574, 29.4241]-->
+<!--    });-->
+
+
+
+
+<!--    var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';-->
+<!--    var weatherOptions = {-->
+<!--        lat: 29.4241,-->
+<!--        lon: -98.4936,-->
+<!--        appid: OPEN_WEATHER_APPID,-->
+<!--        exclude: 'minutely, current, hourly'-->
+
+<!--    };-->
+<!--    $.get(weatherUrl, weatherOptions).done(function(data){-->
+<!--        console.log(data);-->
+<!--        console.log(data.daily[0].temp.max);-->
+
+<!--        var todayDate = new Date(data.daily[0].dt * 1000);-->
+<!--        console.log(todayDate.toLocaleDateString());-->
+<!--    });-->
+
+
+
+
+<!--</script>-->
+
+
+
+
+
+
+<!--</body>-->
+<!--</html>-->
