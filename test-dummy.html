@@ -11,19 +11,30 @@
 <script>
     "use strict";
 
-    $(document).ready(function() {
-        $('#codeup').hover(
-            function() {
-                $(this).css('background-color', '#FF0');
-            },
-            function() {
-                $(this).css('background-color', '#FFF');
-            }
-        );
+    // $(document).ready(function() {
+    //     $('#codeup').hover(
+    //         function() {
+    //             $(this).css('background-color', '#FF0');
+    //         },
+    //         function() {
+    //             $(this).css('background-color', '#FFF');
+    //         }
+    //     );
+    // });
+    const p = new Promise((resolve, reject) => {
+        resolve(3)
+    } else {
+        reject('Network Connection Error!');
     });
+    }
+
+    p.then(result => console.log(result));
+    p.catch(error => console.log('An error occured!'));
 </script>
 </body>
 </html>
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam aut commodi culpa cum cumque, explicabo illum, iste maxime modi necessitatibus provident quis quo reprehenderit soluta sunt unde! Quas, recusandae!
 
 
 
